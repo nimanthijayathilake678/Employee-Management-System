@@ -1,5 +1,6 @@
 package Employee.Management.System.Asgard.Security.entity;
 
+import Employee.Management.System.Asgard.Security.enums.AttendanceStatus;
 import Employee.Management.System.Asgard.Security.enums.ShiftType;
 import jakarta.persistence.*;
 import lombok.*;
@@ -19,7 +20,7 @@ public class Attendance {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long attendance_id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "employee_id", nullable = false)
@@ -47,6 +48,10 @@ public class Attendance {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private AttendanceStatus status;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "dutyPoint_id", nullable = false)
+    private DutyPoint dutyPoint;
 
     private String remarks;
 
