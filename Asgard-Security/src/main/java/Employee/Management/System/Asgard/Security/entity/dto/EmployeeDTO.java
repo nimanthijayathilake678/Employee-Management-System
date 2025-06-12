@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class EmployeeDTO {
-
     private Long employeeId;
     private String employeeCode;
     private String firstName;
