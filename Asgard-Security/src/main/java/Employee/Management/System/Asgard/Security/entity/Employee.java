@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "employee")
+@Table(name = "Employee")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long employee_id;
 
     @Column(name = "employee_code", nullable = false, unique = true)
     private String employeeCode;
