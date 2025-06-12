@@ -3,6 +3,8 @@ package Employee.Management.System.Asgard.Security.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "DutyPoint")
 @Getter
@@ -23,4 +25,8 @@ public class DutyPoint {
 
     @Column(nullable = false,length = 100)
     private String dutyPoint_location;
+
+    @Column(name = "dutyPoint_charges", nullable = false)
+    private BigDecimal dutyPointCharges;
+
 }
