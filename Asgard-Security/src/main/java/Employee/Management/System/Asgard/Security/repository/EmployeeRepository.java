@@ -1,4 +1,7 @@
 package Employee.Management.System.Asgard.Security.repository;
 
-public interface EmployeeRepository {
+import Employee.Management.System.Asgard.Security.entity.Employee;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface EmployeeRepository extends JpaRepository <Employee ,Long> {
 }
