@@ -1,10 +1,6 @@
 package Employee.Management.System.Asgard.Security.entity.dto;
 
 import Employee.Management.System.Asgard.Security.enums.Role;
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-
 import java.time.LocalDateTime;
 
 public class UserDTO {
