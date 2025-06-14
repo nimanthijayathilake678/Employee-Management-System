@@ -28,4 +28,24 @@ public class PaySheetMapper {
                 .netPay(paysheetDTO.getNetPay())
                 .status(paysheetDTO.getStatus()).build();
     }
+
+    // map entity to the dto
+    public PaysheetDTO toDTO(Paysheet paysheet){
+        if (paysheet == null){
+            return null;
+        }
+        return PaysheetDTO.builder()
+                .paySheet_id(paysheet.getPaySheet_id())
+                .employee(paysheet.getEmployee())
+                .payPeriodMonth(paysheet.getPayPeriodMonth())
+                .baseSalary(paysheet.getBaseSalary())
+                .overtimePay(paysheet.getOvertimePay())
+                .bonuses(paysheet.getBonuses())
+                .deductions(paysheet.getDeductions())
+                .grossPay(paysheet.getGrossPay())
+                .taxDeductions(paysheet.getTaxDeductions())
+                .netPay(paysheet.getNetPay())
+                .status(paysheet.getStatus()).build();
+
+    }
 }
