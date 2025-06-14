@@ -4,10 +4,18 @@ import Employee.Management.System.Asgard.Security.entity.Employee;
 import Employee.Management.System.Asgard.Security.entity.User;
 import Employee.Management.System.Asgard.Security.enums.PaysheetStatus;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class PaysheetDTO {
     private Long paySheet_id;
     private Employee employee;
