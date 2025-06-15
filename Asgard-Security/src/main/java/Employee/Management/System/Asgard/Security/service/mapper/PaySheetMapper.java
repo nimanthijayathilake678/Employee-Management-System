@@ -1,17 +1,11 @@
 package Employee.Management.System.Asgard.Security.service.mapper;
 
-import Employee.Management.System.Asgard.Security.entity.Employee;
 import Employee.Management.System.Asgard.Security.entity.Paysheet;
-import Employee.Management.System.Asgard.Security.entity.User;
 import Employee.Management.System.Asgard.Security.entity.dto.PaysheetDTO;
-import Employee.Management.System.Asgard.Security.enums.PaysheetStatus;
-
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 public class PaySheetMapper {
     public Paysheet toEntity(PaysheetDTO paysheetDTO){
-        //map the feilds to the entity
+        //map the fields to the entity
         if (paysheetDTO ==null){
             return null;
         }
