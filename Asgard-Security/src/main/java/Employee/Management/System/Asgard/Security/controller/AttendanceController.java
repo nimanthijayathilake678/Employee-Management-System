@@ -1,7 +1,5 @@
 package Employee.Management.System.Asgard.Security.controller;
 
-package Employee.Management.System.Asgard.Security.controller;
-
 import Employee.Management.System.Asgard.Security.entity.dto.AttendanceDTO;
 import Employee.Management.System.Asgard.Security.service.AttendanceService;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +21,4 @@ public class AttendanceController {
         AttendanceDTO createdAttendance = attendanceService.createAttendance(attendanceDTO);
         return ResponseEntity.ok(createdAttendance);
     }
-
-    // Optionally, you could add more endpoints like getting records, updating, deleting, etc.
 }
