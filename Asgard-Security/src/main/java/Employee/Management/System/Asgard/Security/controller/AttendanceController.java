@@ -1,7 +1,5 @@
 package Employee.Management.System.Asgard.Security.controller;
 
-package Employee.Management.System.Asgard.Security.controller;
-
 import Employee.Management.System.Asgard.Security.entity.dto.AttendanceDTO;
 import Employee.Management.System.Asgard.Security.service.AttendanceService;
 import org.springframework.http.ResponseEntity;
