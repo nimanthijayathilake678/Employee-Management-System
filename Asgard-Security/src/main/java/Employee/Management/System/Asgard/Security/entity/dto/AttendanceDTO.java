@@ -5,11 +5,19 @@ import Employee.Management.System.Asgard.Security.entity.Employee;
 import Employee.Management.System.Asgard.Security.enums.AttendanceStatus;
 import Employee.Management.System.Asgard.Security.enums.ShiftType;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class AttendanceDTO {
     private Long attendance_id;
     private Employee employee;
