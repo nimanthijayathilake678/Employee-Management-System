@@ -2,7 +2,9 @@ package Employee.Management.System.Asgard.Security.service.mapper;
 
 import Employee.Management.System.Asgard.Security.entity.User;
 import Employee.Management.System.Asgard.Security.entity.dto.UserDTO;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserMapper {
 
     // Map UserDTO to User entity
