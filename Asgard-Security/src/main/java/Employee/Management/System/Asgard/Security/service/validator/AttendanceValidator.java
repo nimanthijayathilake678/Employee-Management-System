@@ -38,11 +38,11 @@ public class AttendanceValidator {
     private void validateCommonFields(AttendanceDTO dto) {
 
         /* — Mandatory references — */
-        if (dto.getEmployee() == null) {
+        if (dto.getEmployee().getEmployee_id() == null) {
             throw new BadRequestException("Employee reference is required");
         }
 
-        if (dto.getDutyPoint() == null) {
+        if (dto.getDutyPoint().getDutyPoint_id() == null) {
             throw new BadRequestException("Duty‑point reference is required");
         }
 
