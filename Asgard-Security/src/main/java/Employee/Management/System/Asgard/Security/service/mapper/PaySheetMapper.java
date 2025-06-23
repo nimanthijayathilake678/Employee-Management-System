@@ -2,7 +2,9 @@ package Employee.Management.System.Asgard.Security.service.mapper;
 
 import Employee.Management.System.Asgard.Security.entity.Paysheet;
 import Employee.Management.System.Asgard.Security.entity.dto.PaysheetDTO;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PaySheetMapper {
     public Paysheet toEntity(PaysheetDTO paysheetDTO){
         //map the fields to the entity

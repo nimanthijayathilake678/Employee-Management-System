@@ -10,10 +10,14 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+<<<<<<< HEAD
+public class PaySheetServiceImpl implements PaySheetService {
+    PaysheetDTO createPaySheet(PaysheetDTO paysheetDTO){
+=======
 @Service
 @Transactional
 public class PaySheetServiceImpl implements PaySheetService {
-    
+>>>>>>> 61e471725e3c289167c826077541dae7d615ad1a
 
     @Autowired
     private final PaySheetRepository paysheetRepository;

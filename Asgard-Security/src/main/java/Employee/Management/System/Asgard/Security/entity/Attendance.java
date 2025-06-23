@@ -49,7 +49,7 @@ public class Attendance {
     @Column(nullable = false)
     private AttendanceStatus status;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "dutyPoint_id", nullable = false)
     private DutyPoint dutyPoint;
 
