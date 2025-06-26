@@ -1,7 +1,9 @@
 package Employee.Management.System.Asgard.Security.service.impl;
 
 import Employee.Management.System.Asgard.Security.entity.DutyPoint;
+import Employee.Management.System.Asgard.Security.entity.Employee;
 import Employee.Management.System.Asgard.Security.entity.dto.DutyPointDTO;
+import Employee.Management.System.Asgard.Security.entity.dto.EmployeeDTO;
 import Employee.Management.System.Asgard.Security.repository.DutyPointRepository;
 import Employee.Management.System.Asgard.Security.service.DutyPointService;
 import Employee.Management.System.Asgard.Security.service.mapper.DutyPointMapper;
@@ -9,6 +11,8 @@ import Employee.Management.System.Asgard.Security.service.validator.DutyPointVal
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @Transactional
@@ -28,10 +32,14 @@ public class DutyPointServiceImpl implements DutyPointService {
         @Override
         public DutyPointDTO createDutyPoint(DutyPointDTO dto) {
             dutyPointValidator.validateForCreate(dto);
-
             DutyPoint entity = dutyPointMapper.toEntity(dto);
             DutyPoint saved = dutyPointRepository.save(entity);
-
             return dutyPointMapper.toDto(saved);
+        }
+
+        @Override
+        public List<DutyPointDTO> getAllDutyPoints() {
+            List<DutyPoint> dutyPoints = dutyPointRepository.findAll();
+            return dutyPointMapper.toDtoList(dutyPoints);
         }
     }
