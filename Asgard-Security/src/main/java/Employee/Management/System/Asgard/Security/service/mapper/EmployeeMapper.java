@@ -6,6 +6,9 @@ import Employee.Management.System.Asgard.Security.entity.Employee;
 
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class EmployeeMapper {
     public Employee toEntity(EmployeeDTO dto) {
@@ -46,5 +49,14 @@ public class EmployeeMapper {
                 .active(entity.isActive())
                 .build();
 
+    }
+
+    public List<EmployeeDTO> toDtoList(List<Employee> employees) {
+        if (employees == null) {
+            return null;
+        }
+        return employees.stream()
+                .map(this::toDto)
+                .collect(Collectors.toList());
     }
 }
