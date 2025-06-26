@@ -4,12 +4,10 @@ import Employee.Management.System.Asgard.Security.entity.dto.DutyPointDTO;
 import Employee.Management.System.Asgard.Security.entity.dto.EmployeeDTO;
 import Employee.Management.System.Asgard.Security.service.DutyPointService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import Employee.Management.System.Asgard.Security.entity.dto.DutyPointDTO;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/DutyPoint")
 public class DutyPointController {

@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/employees")
 public class EmployeeController {
@@ -19,6 +22,15 @@ public class EmployeeController {
     @PostMapping
     public ResponseEntity<EmployeeDTO> createEmployee(@RequestBody EmployeeDTO employeeDTO) {
         EmployeeDTO createdEmployee = employeeService.createEmployee(employeeDTO);
+        System.out.println("created employee in backend");
+        System.out.println(createdEmployee);
         return ResponseEntity.ok(createdEmployee); // 200
+    }
+
+    // Get all employees
+    @GetMapping
+    public ResponseEntity<List<EmployeeDTO>> getAllEmployees() {
+        List<EmployeeDTO> employees = employeeService.getAllEmployee();
+        return ResponseEntity.ok(employees);
     }
 }

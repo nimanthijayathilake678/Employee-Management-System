@@ -10,6 +10,8 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class EmployeeServiceImpl implements EmployeeService {
@@ -32,8 +34,13 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeMapper.toDto(employeeRepository.save(entity));
     }
 
-//    @Override
-//    public getEmployeeById(Long id){
-//
-//    }
+    @Override
+    public List<EmployeeDTO> getAllEmployee() {
+        List<Employee> employees = employeeRepository.findAll();
+        return employeeMapper.toDtoList(employees);
+    }
+
+
+
+
 }
