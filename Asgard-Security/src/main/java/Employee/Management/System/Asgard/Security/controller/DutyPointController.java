@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import Employee.Management.System.Asgard.Security.entity.dto.DutyPointDTO;
 
+import java.util.List;
+
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/DutyPoint")
@@ -21,5 +23,12 @@ public class DutyPointController {
     public ResponseEntity<DutyPointDTO > createDutyPoint (@RequestBody DutyPointDTO dutyPointDto){
         DutyPointDTO createDutyPoint =dutyPointService.createDutyPoint(dutyPointDto);
         return ResponseEntity.ok(createDutyPoint);
+    }
+
+    // Get all dutyPoints
+    @GetMapping
+    public ResponseEntity<List<DutyPointDTO>> getAllDutyPoints() {
+        List<DutyPointDTO> dutypoints = dutyPointService.getAllDutyPoints();
+        return ResponseEntity.ok(dutypoints);
     }
 }

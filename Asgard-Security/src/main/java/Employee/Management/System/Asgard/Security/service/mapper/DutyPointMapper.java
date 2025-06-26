@@ -1,8 +1,13 @@
 package Employee.Management.System.Asgard.Security.service.mapper;
 
 import Employee.Management.System.Asgard.Security.entity.DutyPoint;
+import Employee.Management.System.Asgard.Security.entity.Employee;
 import Employee.Management.System.Asgard.Security.entity.dto.DutyPointDTO;
+import Employee.Management.System.Asgard.Security.entity.dto.EmployeeDTO;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class DutyPointMapper {
@@ -31,5 +36,14 @@ public class DutyPointMapper {
                 .dutyPoint_location(entity.getDutyPoint_location())
                 .dutyPointCharges(entity.getDutyPointCharges())
                 .build();
+    }
+
+    public List<DutyPointDTO> toDtoList(List<DutyPoint> dutyPoints) {
+        if (dutyPoints == null) {
+            return null;
+        }
+        return dutyPoints.stream()
+                .map(this::toDto)
+                .collect(Collectors.toList());
     }
 }
