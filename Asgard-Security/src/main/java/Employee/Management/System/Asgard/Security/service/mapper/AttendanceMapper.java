@@ -1,8 +1,13 @@
 package Employee.Management.System.Asgard.Security.service.mapper;
 
 import Employee.Management.System.Asgard.Security.entity.Attendance;
+import Employee.Management.System.Asgard.Security.entity.DutyPoint;
 import Employee.Management.System.Asgard.Security.entity.dto.AttendanceDTO;
+import Employee.Management.System.Asgard.Security.entity.dto.DutyPointDTO;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class AttendanceMapper {
@@ -48,5 +53,14 @@ public class AttendanceMapper {
         dto.setCreatedAt(entity.getCreatedAt());
 
         return dto;
+    }
+
+    public List<AttendanceDTO> toDtoList(List<Attendance> attendances) {
+        if (attendances == null) {
+            return null;
+        }
+        return attendances.stream()
+                .map(this::toDto)
+                .collect(Collectors.toList());
     }
 }
