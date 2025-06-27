@@ -4,6 +4,7 @@ import Employee.Management.System.Asgard.Security.entity.Attendance;
 import Employee.Management.System.Asgard.Security.entity.Employee;
 import Employee.Management.System.Asgard.Security.entity.DutyPoint;
 import Employee.Management.System.Asgard.Security.entity.dto.AttendanceDTO;
+import Employee.Management.System.Asgard.Security.entity.dto.DutyPointDTO;
 import Employee.Management.System.Asgard.Security.repository.AttendanceRepository;
 import Employee.Management.System.Asgard.Security.repository.EmployeeRepository;
 import Employee.Management.System.Asgard.Security.repository.DutyPointRepository;
@@ -13,6 +14,8 @@ import Employee.Management.System.Asgard.Security.service.validator.AttendanceVa
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @Transactional
@@ -62,5 +65,12 @@ public class AttendanceServiceImpl implements AttendanceService {
 
         Attendance saved = attendanceRepository.save(entity);
         return attendanceMapper.toDto(saved);
+    }
+
+    @Override
+    public List<AttendanceDTO> getAllAttendance() {
+        List<Attendance> attendance = attendanceRepository.findAll();
+        System.out.println("TEst"+attendance);
+        return attendanceMapper.toDtoList(attendance);
     }
 }
