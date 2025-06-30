@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -40,7 +41,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeMapper.toDtoList(employees);
     }
 
-
-
+    @Override
+    public EmployeeDTO fetchEmployeeByID(Long employee_id) {
+        Optional<Employee> entity = employeeRepository.findById(employee_id);
+        return entity.map(employeeMapper::toDto).orElse(null);
+    }
 
 }

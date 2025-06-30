@@ -55,12 +55,35 @@ public class AttendanceMapper {
         return dto;
     }
 
-    public List<AttendanceDTO> toDtoList(List<Attendance> attendances) {
-        if (attendances == null) {
-            return null;
-        }
-        return attendances.stream()
-                .map(this::toDto)
-                .collect(Collectors.toList());
+//    public List<AttendanceDTO> toDtoList(List<Attendance> attendances) {
+//        if (attendances == null) {
+//            return null;
+//        }
+//        return attendances.stream()
+//                .map(this::toDto)
+//                .collect(Collectors.toList());
+//    }
+public List<AttendanceDTO> toDtoList(List<Attendance> attendances) {
+    if (attendances == null || attendances.isEmpty()) {
+        return List.of();
     }
+
+    return attendances.stream()
+            .map(attendance -> AttendanceDTO.builder()
+                    .attendance_id(attendance.getAttendance_id())
+                    .employee(attendance.getEmployee())
+                    .date(attendance.getDate())
+                    .shift(attendance.getShift())
+                    .checkInTime(attendance.getCheckInTime())
+                    .checkOutTime(attendance.getCheckOutTime())
+                    .breakDuration(attendance.getBreakDuration())
+                    .overtimeHours(attendance.getOvertimeHours())
+                    .status(attendance.getStatus())
+                    .dutyPoint(attendance.getDutyPoint())
+                    .remarks(attendance.getRemarks())
+                    .createdAt(attendance.getCreatedAt())
+                    .build())
+            .collect(Collectors.toList());
+}
+
 }
