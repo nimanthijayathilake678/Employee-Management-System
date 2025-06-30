@@ -1,6 +1,7 @@
 package Employee.Management.System.Asgard.Security.entity;
 
 import Employee.Management.System.Asgard.Security.enums.Role;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,6 +16,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
