@@ -8,4 +8,5 @@ import java.util.List;
 public interface AttendanceService {
     AttendanceDTO createAttendance(AttendanceDTO attendanceDTO);
     List<AttendanceDTO> getAllAttendance();
+    List<AttendanceDTO> fetchAttendanceByEmployeeId(Long employeeId);
 }
