@@ -27,9 +27,17 @@ public class AttendanceController {
         return ResponseEntity.ok(createdAttendance);
     }
 
+    //get all the attendace
     @GetMapping
     public ResponseEntity<List<AttendanceDTO>> getAllAttendance() {
         List<AttendanceDTO> attendance = attendanceService.getAllAttendance();
+        return ResponseEntity.ok(attendance);
+    }
+
+    //get attendance when employee id is given
+    @GetMapping("/{id}")
+    public ResponseEntity<List<AttendanceDTO>> getAttendanceByEmployeeId(@PathVariable Long id){
+        List<AttendanceDTO> attendance=attendanceService.fetchAttendanceByEmployeeId(id);
         return ResponseEntity.ok(attendance);
     }
 }

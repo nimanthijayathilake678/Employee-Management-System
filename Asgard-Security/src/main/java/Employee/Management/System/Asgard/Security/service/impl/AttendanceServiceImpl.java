@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -73,4 +74,11 @@ public class AttendanceServiceImpl implements AttendanceService {
         System.out.println("TEst"+attendance);
         return attendanceMapper.toDtoList(attendance);
     }
+
+    @Override
+    public List<AttendanceDTO> fetchAttendanceByEmployeeId(Long employeeId) {
+        List<Attendance> attendanceList = attendanceRepository.findByEmployeeId(employeeId);
+        return attendanceMapper.toDtoList(attendanceList);
+    }
+
 }
