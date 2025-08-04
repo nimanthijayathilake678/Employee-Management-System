@@ -27,7 +27,7 @@ public class AttendanceController {
         return ResponseEntity.ok(createdAttendance);
     }
 
-    //get all the attendace
+    //get all the attendance
     @GetMapping
     public ResponseEntity<List<AttendanceDTO>> getAllAttendance() {
         List<AttendanceDTO> attendance = attendanceService.getAllAttendance();

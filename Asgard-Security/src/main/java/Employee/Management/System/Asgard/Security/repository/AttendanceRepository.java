@@ -13,5 +13,4 @@ public interface AttendanceRepository  extends JpaRepository<Attendance,Long> {
     //List<Attendance> findByEmployeeId(Long employeeId);
     @Query("SELECT a FROM Attendance a WHERE a.employee.employee_id = :employeeId")
     List<Attendance> findAttendanceByEmployeeId(@Param("employeeId") Long employeeId);
-
 }
