@@ -5,6 +5,7 @@
 - **Attendance Management**: Track employee attendance, leaves, overtime
 - **Paysheet Generation**: Calculate salaries, deductions, bonuses
 - **User Role Management**: Super Admin, Admin, Accountant roles
+
 ### Technology Stack
 - **Backend**: Spring Boot, Spring Security, Spring Data JPA
 - **Database**: MySQL
